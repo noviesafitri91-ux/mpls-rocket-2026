@@ -1,0 +1,716 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Arial', sans-serif;
+}
+
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at center,
+    #152238,
+    #000);
+
+    color:white;
+
+}
+
+
+
+
+
+/* ==========================
+   BACKGROUND BINTANG
+========================== */
+
+
+.stars{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.5;
+
+}
+
+
+
+
+
+
+/* ==========================
+   OPENING SCREEN
+========================== */
+
+
+#openingScreen{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:10;
+
+}
+
+
+
+
+/* ==========================
+   3 LOGO
+========================== */
+
+
+.logo-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:45px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.logo-item{
+
+    width:130px;
+
+    height:130px;
+
+    object-fit:contain;
+
+    animation:
+
+    floating 3s infinite alternate;
+
+}
+
+
+
+
+
+
+/* ==========================
+   TITLE
+========================== */
+
+
+#openingScreen h1{
+
+    font-size:45px;
+
+    letter-spacing:5px;
+
+    text-shadow:
+
+    0 0 20px cyan;
+
+}
+
+
+
+#openingScreen h2{
+
+    font-size:35px;
+
+    margin-top:10px;
+
+}
+
+
+
+#openingScreen h3{
+
+    font-size:55px;
+
+    margin:20px;
+
+    color:#ffd166;
+
+    text-shadow:
+
+    0 0 25px orange;
+
+}
+
+
+
+#openingScreen p{
+
+    font-size:22px;
+
+}
+
+
+
+
+
+
+/* ==========================
+   BUTTON
+========================== */
+
+
+#launchButton{
+
+
+    margin-top:35px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+
+    background:#ffd166;
+
+    color:#000;
+
+
+    font-size:24px;
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    animation:
+
+    pulse 1.5s infinite;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   COUNTDOWN
+========================== */
+
+
+#countdown{
+
+
+    position:absolute;
+
+    top:35%;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    font-size:150px;
+
+    font-weight:bold;
+
+
+    display:none;
+
+
+    z-index:30;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   ROCKET
+========================== */
+
+
+#rocketArea{
+
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+}
+
+
+
+#rocket{
+
+
+    width:180px;
+
+
+}
+
+
+
+
+
+
+#flame{
+
+
+    position:absolute;
+
+
+    bottom:-90px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:90px;
+
+
+    display:none;
+
+
+}
+
+
+
+#smoke{
+
+
+    position:absolute;
+
+
+    bottom:-130px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:80px;
+
+
+    display:none;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   TEXT EFFECT
+========================== */
+
+
+#ignition,
+#liftoff{
+
+
+    position:absolute;
+
+
+    top:40%;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    font-size:85px;
+
+
+    font-weight:bold;
+
+
+    display:none;
+
+
+    z-index:40;
+
+
+}
+
+
+
+#ignition{
+
+    color:#ff6600;
+
+}
+
+
+
+#liftoff{
+
+    color:#00ffff;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   ROCKET ANIMATION
+========================== */
+
+
+.shake{
+
+
+animation:
+
+shake .2s infinite;
+
+
+}
+
+
+
+.launch{
+
+
+animation:
+
+launch 4s forwards;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   FLASH
+========================== */
+
+
+#flash{
+
+
+position:absolute;
+
+
+width:100%;
+
+height:100%;
+
+
+background:white;
+
+
+display:none;
+
+
+z-index:100;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   VIDEO
+========================== */
+
+
+#videoScreen{
+
+
+position:absolute;
+
+
+width:100%;
+
+
+height:100%;
+
+
+display:none;
+
+
+z-index:60;
+
+
+}
+
+
+
+#launchVideo{
+
+
+width:100%;
+
+
+height:100%;
+
+
+object-fit:cover;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   CLOSING
+========================== */
+
+
+#closingScreen{
+
+
+position:absolute;
+
+
+width:100%;
+
+
+height:100%;
+
+
+display:none;
+
+
+flex-direction:column;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+text-align:center;
+
+
+background:#000;
+
+
+z-index:70;
+
+
+}
+
+
+
+.closing-logo img{
+
+
+width:180px;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+
+#missionText{
+
+
+font-size:50px;
+
+
+color:#ffd166;
+
+
+}
+
+
+
+#closingScreen p{
+
+
+font-size:28px;
+
+
+margin-top:15px;
+
+
+}
+
+
+
+#finishButton{
+
+
+margin-top:40px;
+
+
+padding:15px 45px;
+
+
+font-size:25px;
+
+
+border-radius:30px;
+
+
+border:none;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   ANIMATION
+========================== */
+
+
+@keyframes floating{
+
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-25px);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes pulse{
+
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes shake{
+
+
+0%{
+
+transform:translateX(-5px);
+
+}
+
+
+50%{
+
+transform:translateX(5px);
+
+}
+
+
+100%{
+
+transform:translateX(-5px);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes launch{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+100%{
+
+transform:translateY(-900px);
+
+}
+
+
+}
